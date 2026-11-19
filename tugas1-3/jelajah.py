@@ -18,7 +18,10 @@ def jelajah(node, kedalaman=0, field=None):
     print("  " * kedalaman + f"{label}{node.type} [{baris + 1}:{kolom}]")
 
     # TODO: menelusuri child yang bernama
-
+    for i, child in enumerate(node.children):
+        if child.is_named:
+            nama_field = node.field_name_for_child(i)
+            jelajah(child, kedalaman + 1, nama_field)
 
 # Membaca file Python dari argumen terminal
 with open(sys.argv[1], "rb") as f:
