@@ -12,7 +12,8 @@ export default grammar({
       $.comparison,
       $.and_expression,
       $.or_expression,
-      $.parenthesized
+      $.parenthesized,
+      $.not_expression
     ),
 
     and_expression: $ => prec.left(2, seq(
@@ -33,6 +34,16 @@ export default grammar({
       ')'
     ),
 
+    not_expression: $ => prec(3, seq(
+      'not',
+      $._expr
+    )),
+
+    boolean: $ => choice(
+      'true',
+      'false'
+    ),
+
     comparison: $ => seq(
       $.identifier,
       choice('=', '!=', '>', '<', '>=', '<='),
@@ -41,7 +52,8 @@ export default grammar({
 
     _value: $ => choice(
       $.string,
-      $.number
+      $.number,
+      $.boolean
     ),
 
     identifier: $ => /[a-zA-Z_][a-zA-Z0-9_.]*/,
