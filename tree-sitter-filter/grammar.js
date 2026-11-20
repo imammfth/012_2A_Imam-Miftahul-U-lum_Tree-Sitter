@@ -3,9 +3,22 @@ export default grammar({
 
   extras: $ => [/\s/],
 
-  rules: {
-    query: $ => $.comparison,
+  word: $ => $.identifier,
 
+  rules: {
+    query: $ => $._expr,
+
+    _expr: $ => choice(
+      $.comparison,
+      $.and_expression
+    ),
+
+    and_expression: $ => prec.left(2, seq(
+      $._expr,
+      'and',
+      $._expr
+    )),
+    
     comparison: $ => seq(
       $.identifier,
       choice('=', '!=', '>', '<', '>=', '<='),
