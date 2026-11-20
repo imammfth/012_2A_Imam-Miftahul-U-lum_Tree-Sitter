@@ -1,0 +1,65 @@
+========== HASIL PENGUJIAN TUGAS 1 ==========
+
+1. Kode sederhana
+Kode: x = 1
+Syntax Tree: (module (expression_statement (assignment left: (identifier) right: (integer))))
+Memiliki error: False
+
+2. Fungsi Python
+Kode: def halo(nama):
+    return nama
+Syntax Tree: (module (function_definition name: (identifier) parameters: (parameters (identifier)) body: (block (return_statement (identifier)))))
+Memiliki error: False
+
+3. Percabangan if/else
+Kode: if nilai > 80:
+    print("Lulus")
+else:
+    print("Tidak lulus")
+Syntax Tree: (module (if_statement condition: (comparison_operator (identifier) (integer)) consequence: (block (expression_statement (call function: (identifier) arguments: (argument_list (string (string_start) (string_content) (string_end)))))) alternative: (else_clause body: (block (expression_statement (call function: (identifier) arguments: (argument_list (string (string_start) (string_content) (string_end)))))))))
+Memiliki error: False
+
+4. Class dengan satu method
+Kode: class Mahasiswa:
+    def belajar(self):
+        print('Sedang belajar')
+Syntax Tree: (module (class_definition name: (identifier) body: (block (function_definition name: (identifier) parameters: (parameters (identifier)) body: (block (expression_statement (call function: (identifier) arguments: (argument_list (string (string_start) (string_content) (string_end))))))))))
+Memiliki error: False
+
+========== NODE BERNAMA DAN ANONIM ==========
+
+Semua children function_definition:
+def: anonim
+identifier: bernama
+parameters: bernama
+:: anonim
+block: bernama
+
+Semua children parameters:
+(: anonim
+identifier: bernama
+): anonim
+
+Named children function_definition:
+identifier
+parameters
+block
+
+========== ERROR RECOVERY ==========
+Syntax Tree: (module (ERROR (identifier) (parameters (identifier)) (identifier)))
+Memiliki error: True
+ERROR ditemukan: ERROR
+
+========== CHILDREN VS NAMED_CHILDREN ==========
+
+Children:
+def
+identifier
+parameters
+:
+block
+
+Named children:
+identifier
+parameters
+block
