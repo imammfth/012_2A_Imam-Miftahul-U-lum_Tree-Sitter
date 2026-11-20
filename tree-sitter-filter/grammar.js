@@ -10,7 +10,8 @@ export default grammar({
 
     _expr: $ => choice(
       $.comparison,
-      $.and_expression
+      $.and_expression,
+      $.or_expression
     ),
 
     and_expression: $ => prec.left(2, seq(
@@ -18,7 +19,13 @@ export default grammar({
       'and',
       $._expr
     )),
-    
+
+    or_expression: $ => prec.left(1, seq(
+      $._expr,
+      'or',
+      $._expr
+    )),
+
     comparison: $ => seq(
       $.identifier,
       choice('=', '!=', '>', '<', '>=', '<='),
