@@ -1,0 +1,2 @@
+Fungsi tambah memiliki 2 parameter
+Fungsi sapa memiliki 1 parameter
