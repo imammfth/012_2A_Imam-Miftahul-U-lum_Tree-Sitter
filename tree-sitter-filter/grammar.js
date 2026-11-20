@@ -11,7 +11,8 @@ export default grammar({
     _expr: $ => choice(
       $.comparison,
       $.and_expression,
-      $.or_expression
+      $.or_expression,
+      $.parenthesized
     ),
 
     and_expression: $ => prec.left(2, seq(
@@ -25,6 +26,12 @@ export default grammar({
       'or',
       $._expr
     )),
+
+    parenthesized: $ => seq(
+      '(',
+      $._expr,
+      ')'
+    ),
 
     comparison: $ => seq(
       $.identifier,
