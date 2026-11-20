@@ -1,0 +1,4 @@
+@fn  baris 6: print
+@fn  baris 10: print
+@args  baris 6: (hasil)
+@args  baris 10: ("Halo", nama)
