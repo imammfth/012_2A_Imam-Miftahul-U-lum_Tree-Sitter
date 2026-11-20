@@ -1,0 +1,8 @@
+Memeriksa 16 file Python...
+
+[FUNGSI PANJANG] /mnt/c/Users/Axioo Hype 7/OneDrive - Politeknik Negeri Bandung/semester 3/plp/PLP praktek/ETS-PLP-PRAKTEK-012-024/crud/cli.py:28: main (59 baris)
+[FUNGSI PANJANG] /mnt/c/Users/Axioo Hype 7/OneDrive - Politeknik Negeri Bandung/semester 3/plp/PLP praktek/ETS-PLP-PRAKTEK-012-024/crud/lexer.py:101: _scan_token (66 baris)
+[FUNGSI PANJANG] /mnt/c/Users/Axioo Hype 7/OneDrive - Politeknik Negeri Bandung/semester 3/plp/PLP praktek/ETS-PLP-PRAKTEK-012-024/crud/parser.py:330: _primary (32 baris)
+[FUNGSI PANJANG] /mnt/c/Users/Axioo Hype 7/OneDrive - Politeknik Negeri Bandung/semester 3/plp/PLP praktek/ETS-PLP-PRAKTEK-012-024/evaluate.py:41: main (32 baris)
+
+Pemeriksaan selesai.
